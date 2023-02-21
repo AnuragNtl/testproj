@@ -24,3 +24,6 @@ if (!event) {
     - This will subdivide it into smaller, reusable parts and make it more readable.
 - Extracted literals to constants/configs
 - Moved common hashing code to common function
+- Alternatively, made the implementation composed of multiple transformations of candidate, by separately giving each granular transformation a single responsibility. [Link](dpk_alternate.js)
+    - this will accomodate for future additions to these transformations. 
+
