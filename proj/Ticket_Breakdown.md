@@ -109,6 +109,8 @@ let report = generateReport({
 
 ```
 
+- Integration tests would also be done for signup functionality of agent into a facility.
+
 
 
 
