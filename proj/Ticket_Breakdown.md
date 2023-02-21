@@ -9,20 +9,22 @@ Assuming that there is a shift table which has references in agents, and facilit
 shifts ----> agents
 shifts ----> facilities
 
+```
 - create table facilities (
     - id varchar(20) primary key,
-    - name varchar(80)
-- create table agents
+    - name varchar(80) );
+- create table agents (
     - id varchar(20) primary key,
     - name varchar(80),
-    - email varchar(120)
-- create table shifts
+    - email varchar(120) );
+- create table shifts (
     - id varchar(20) primary key,
     - agent_id varchar(20),
     - from_time timestamp,
     - to_time timestamp,
     - foreign key agent_id references(agents.id),
-    - foreign key facility_id references(facilities.id)
+    - foreign key facility_id references(facilities.id) );
+```
 
 ### Current Code Structure:
 
