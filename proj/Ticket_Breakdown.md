@@ -61,40 +61,41 @@ We need to be able to allow facilities to save their own custom ids, and also ge
     - It should not break any existing functionalities.
 
 ### Execution Plan
-- Ticket #1 : DB changes:
+
+#### Ticket #1 : DB changes:
     - Create a new table `facility_agent_info` to specify relationship between `facility` and `agent`. 
     - Add one column in the table `facility_agent_id`, along with foreign keys to `facility` and `agent`.
-- Ticket #2 Changes after fetching facilities + Unit tests:
+#### Ticket #2 Changes after fetching facilities + Unit tests:
     - After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
 `getAgentsInfoByFacility(id)`
-    - Parameters
-        - id `string` facility id
-    - Return
-        - list/array of `Agent`[]s info from `facility_agent_info` table.
+- Parameters
+    - id `string` facility id
+- Return
+    - list/array of `Agent`[]s info from `facility_agent_info` table.
 
-- Ticket #3 Changes in report generation + Unit Tests
-    - The report generation (`generateReport()`) will now accept an object, such that:
+#### Ticket #3 Changes in report generation + Unit Tests
+- The report generation (`generateReport()`) will now accept an object, such that:
 ```
 function generateReport({shifts, agentInfo}) {
-    // report generation
+// report generation
 }
 ```
     - We will utilize the agentInfo we received to send in `generateReport()`
 
-- Ticket #4 : Integration + Integration Tests
-    - The final code would look like this:
+#### Ticket #4 : Integration + Integration Tests
+- The final code would look like this:
 ```
-    let shifts = getShiftsByFacility(facilityId);
-    let agentInfo = getAgentsInfoByFacility(facilityId);
-    let report = generateReport({
-        shifts,
-        agentInfo
-    });
-    // Rest of the report handling
-    
+let shifts = getShiftsByFacility(facilityId);
+let agentInfo = getAgentsInfoByFacility(facilityId);
+let report = generateReport({
+    shifts,
+    agentInfo
+});
+// Rest of the report handling
+
 ```
 
 
 
-    
+
 
