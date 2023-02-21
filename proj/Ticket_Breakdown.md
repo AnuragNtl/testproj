@@ -67,10 +67,10 @@ We need to be able to allow facilities to save their own custom ids, and also ge
 - Ticket #2 Changes after fetching facilities + Unit tests:
     - After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
 `getAgentsInfoByFacility(id)`
-- Parameters
-    - id `string` facility id
-- Return
-    - list/array of `Agent`[]s info from `facility_agent_info` table.
+    - Parameters
+        - id `string` facility id
+    - Return
+        - list/array of `Agent`[]s info from `facility_agent_info` table.
 
 - Ticket #3 Changes in report generation + Unit Tests
     - The report generation (`generateReport()`) will now accept an object, such that:
