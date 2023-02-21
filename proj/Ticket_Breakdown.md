@@ -22,8 +22,8 @@ Assuming that there is a shift table which has references in agents, and facilit
     - agent_id varchar(20),
     - from_time timestamp,
     - to_time timestamp,
-    - foreign key agent_id references(agents.id),
-    - foreign key facility_id references(facilities.id) );
+    - foreign key agent_id references agents(id),
+    - foreign key facility_id references facilities(id) );
 ```
 
 ### Current Code Structure:
@@ -65,6 +65,15 @@ We need to be able to allow facilities to save their own custom ids, and also ge
 #### Ticket #1 : DB changes:
     - Create a new table `facility_agent_info` to specify relationship between `facility` and `agent`. 
     - Add one column in the table `facility_agent_id`, along with foreign keys to `facility` and `agent`.
+```
+create table facility_agent_info(
+    id varchar(80),
+    facility_id varchar(80),
+    agent_id varchar(80),
+    foreign key (facility_id) references facilities(id),
+    foreign key (agent_id) references agents(id) );
+
+```
 #### Ticket #2 Changes after fetching facilities + Unit tests:
     - After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
 `getAgentsInfoByFacility(id)`
