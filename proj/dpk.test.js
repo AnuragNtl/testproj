@@ -30,7 +30,7 @@ describe("deterministicPartitionKey", () => {
 
 
 describe("deterministicPartitionKey", () => {
-    it("returns hash of partition key object", () => {
+    it("returns partition key object", () => {
         const partitionKey = {payload: "sampleKey"};
         const event = {
             partitionKey
