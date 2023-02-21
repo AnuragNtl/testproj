@@ -30,12 +30,13 @@ describe("deterministicPartitionKey", () => {
 
 
 describe("deterministicPartitionKey", () => {
-    it("returns hash of event when partitionKey not given", () => {
+    it("returns hash of partition key object", () => {
+        const partitionKey = {payload: "sampleKey"};
         const event = {
-            payload: "payload"
+            partitionKey
         };
         expect(deterministicPartitionKey(event))
-            .toBe(crypto.createHash("sha3-512").update(JSON.stringify(event)).digest("hex"));
+            .toBe(JSON.stringify(partitionKey));
     });
 });
 
