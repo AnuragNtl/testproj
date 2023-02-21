@@ -76,7 +76,7 @@ create table facility_agent_info(
 
 ```
 #### Ticket #2 Changes after fetching facilities + Unit tests:
-    - After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
+- After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
 `getAgentsInfoByFacility(id)`
 - Parameters
     - id `string` facility id
