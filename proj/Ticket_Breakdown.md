@@ -61,7 +61,7 @@ We need to be able to allow facilities to save their own custom ids, and also ge
 
 ### Execution Plan
 
-#### Ticket #1 : DB changes:
+#### Ticket #1 : DB changes + Handling during agent signup in facility
 - Create a new table `facility_agent_info` to specify relationship between `facility` and `agent`. 
 - Add one column in the table `facility_agent_id`, along with foreign keys to `facility` and `agent`.
 
@@ -75,6 +75,9 @@ create table facility_agent_info(
     foreign key (agent_id) references agents(id) );
 
 ```
+- There will be an additional handling which registers/signs in an agent into a facility when a shift is created.
+- A new entry will be created in this table, whenever an agent signs up in a facility.
+
 #### Ticket #2 Changes after fetching facilities + Unit tests:
 - After the `getShiftsByFacility()` call is made, we create and call another function `getAgentsInfoByFacility()`.
 `getAgentsInfoByFacility(id)`
