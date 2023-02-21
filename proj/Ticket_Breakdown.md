@@ -6,8 +6,8 @@
 
 Assuming that there is a shift table which has references in agents, and facilities:
 
-shifts ----> agents
-shifts ----> facilities
+- shifts ----> agents
+- shifts ----> facilities
 
 ```
 - create table facilities (
