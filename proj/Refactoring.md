@@ -9,3 +9,16 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+- Moved the constants `TRIVAL_PARTITION_KEY`, `MAX_PARTITION_KEY_LENGTH` to a separate file, `config.js`.
+    - This will externalize the configuration for `deterministicPartitionKey()`
+    - Config, in future can also be loaded from environment variables.
+- Added this condition in the beginning, to remove additional nesting:
+```    
+if (!event) {
+    return config.TRIVIAL_PARTITION_KEY;
+}
+
+```
+- Extracted hash generation of event into a new function `getHashFromEvent()`
+    - This will subdivide it into smaller, reusable parts and make it more readable.
