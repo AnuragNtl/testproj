@@ -32,10 +32,8 @@ const transformations = [
 ];
 
 const transform = (candidate) => {
-    for (let transformation of transformations) {
-        candidate = transformation(candidate);
-    }
-    return candidate;
+    //pipe
+    return transformations.reduce((candidate, transformation) => transformation(candidate), candidate);
 }
 
 exports.deterministicPartitionKey = (event) => {
