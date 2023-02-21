@@ -70,6 +70,7 @@ create table facility_agent_info(
     id varchar(80),
     facility_id varchar(80),
     agent_id varchar(80),
+    facility_agent_id varchar(80),
     foreign key (facility_id) references facilities(id),
     foreign key (agent_id) references agents(id) );
 
