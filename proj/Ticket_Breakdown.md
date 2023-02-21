@@ -62,8 +62,9 @@ We need to be able to allow facilities to save their own custom ids, and also ge
 ### Execution Plan
 
 #### Ticket #1 : DB changes:
-    - Create a new table `facility_agent_info` to specify relationship between `facility` and `agent`. 
-    - Add one column in the table `facility_agent_id`, along with foreign keys to `facility` and `agent`.
+- Create a new table `facility_agent_info` to specify relationship between `facility` and `agent`. 
+- Add one column in the table `facility_agent_id`, along with foreign keys to `facility` and `agent`.
+
 ```
 create table facility_agent_info(
     id varchar(80),
