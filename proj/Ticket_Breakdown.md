@@ -1,4 +1,3 @@
-# testproj
 
 ### Understanding based on problem statement:
 
