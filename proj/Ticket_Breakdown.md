@@ -94,6 +94,7 @@ function generateReport({shifts, agentInfo}) {
 }
 ```
 - We will utilize the agentInfo we received to send in `generateReport()`
+- `generateReport()` will use `agentInfo` from its parameters to use `facility_agent_id`, which is agent id local to the facility.
 
 #### Ticket #4 : Integration + Integration Tests
 - The final code would look like this:
