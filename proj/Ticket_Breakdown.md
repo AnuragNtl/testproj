@@ -93,7 +93,7 @@ function generateReport({shifts, agentInfo}) {
 // report generation
 }
 ```
-    - We will utilize the agentInfo we received to send in `generateReport()`
+- We will utilize the agentInfo we received to send in `generateReport()`
 
 #### Ticket #4 : Integration + Integration Tests
 - The final code would look like this:
