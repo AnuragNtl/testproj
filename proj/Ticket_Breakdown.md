@@ -84,7 +84,7 @@ create table facility_agent_info(
 - Parameters
     - id `string` facility id
 - Return
-    - list/array of `Agent`[]s info from `facility_agent_info` table.
+    - list/array of `FailityAgentInfo`[]s info from `facility_agent_info` table.
 
 #### Ticket #3 Changes in report generation + Unit Tests
 - The report generation (`generateReport()`) will now accept an object, such that:
