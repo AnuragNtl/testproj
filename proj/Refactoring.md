@@ -22,3 +22,4 @@ if (!event) {
 ```
 - Extracted hash generation of event into a new function `getHashFromEvent()`
     - This will subdivide it into smaller, reusable parts and make it more readable.
+- Extracted literals to constants/configs
