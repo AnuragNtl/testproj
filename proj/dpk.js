@@ -19,14 +19,14 @@ exports.deterministicPartitionKey = (event) => {
     }
 
     if (candidate.length > config.MAX_PARTITION_KEY_LENGTH) {
-        candidate = crypto.createHash("sha3-512").update(candidate).digest("hex");
+        candidate = crypto.createHash(config.HASH).update(candidate).digest("hex");
     }
     return candidate;
 };
 
 function getHashFromEvent(event) {
     const data = JSON.stringify(event);
-    hash = crypto.createHash("sha3-512").update(data).digest("hex");
+    hash = crypto.createHash(config.HASH).update(data).digest("hex");
     return hash;
 }
 
